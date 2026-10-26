@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce los servicios de impresión offset, impresión digital, lonas, viniles, promocionales y stands de Good Print.">
+  <title>Servicios | Good Print</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;700&family=Work+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul: #87D9FB;
+      --rosa: #E04A6D;
+      --amarillo: #FDBF3E;
+      --negro: #111111;
+      --blanco: #FFFFFF;
+      --gris: #5D6268;
+      --fondo: #F6F8FA;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--negro);
+      font-family: "Martel Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4,
+    .navbar-brand,
+    .footer-brand {
+      font-family: "Work Sans", sans-serif;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    .navbar-brand {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .navbar-brand span,
+    .footer-brand span {
+      color: var(--rosa);
+    }
+
+    .navbar-brand small {
+      margin-top: 5px;
+      font-family: "Martel Sans", sans-serif;
+      font-size: .58rem;
+      font-weight: 600;
+    }
+
+    .navbar .nav-link {
+      color: var(--negro);
+      font-weight: 700;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active {
+      color: #B52549;
+    }
+
+    .btn-good {
+      background: var(--amarillo);
+      color: var(--negro);
+      border: 2px solid var(--amarillo);
+      border-radius: 50px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn-good:hover {
+      background: #FFD36F;
+      border-color: #FFD36F;
+      color: var(--negro);
+      transform: translateY(-2px);
+    }
+
+    /* PORTADA */
+    .services-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 6rem 0;
+      background: var(--azul);
+    }
+
+    .services-hero::after {
+      content: "";
+      position: absolute;
+      top: 10%;
+      
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: #9C2342;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .services-hero h1 {
+      max-width: 800px;
+      margin: 1rem 0;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      letter-spacing: -.05em;
+    }
+
+    .services-hero h1 span {
+      color: #A92347;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      color: #272727;
+      font-size: 1.08rem;
+    }
+
+    .hero-label {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: .45rem .8rem;
+      border: 1px dashed rgba(17,17,17,.5);
+      border-radius: 8px;
+      background: rgba(255,255,255,.35);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    /* ESTILOS GENERALES */
+    .section-padding {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      margin: .5rem 0 1rem;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -.04em;
+    }
+
+    .section-lead {
+      color: var(--gris);
+      font-size: 1.02rem;
+    }
+
+    .content-narrow {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* TARJETAS DE SERVICIOS */
+    .services-list {
+      background: var(--fondo);
+    }
+
+    .service-card {
+      height: 100%;
+      padding: 2rem;
+      border: 1px solid #E6E8EB;
+      border-radius: 18px;
+      background: var(--blanco);
+      transition: transform .2s, box-shadow .2s;
+      scroll-margin-top: 110px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .service-number {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      font-size: 1.3rem;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 900;
+    }
+
+    .symbol-blue {
+      background: var(--azul);
+    }
+
+    .symbol-pink {
+      background: #F5A0B2;
+    }
+
+    .symbol-yellow {
+      background: #FFE19A;
+    }
+
+    .service-card h2 {
+      margin: 1.3rem 0 .8rem;
+      font-size: 1.55rem;
+    }
+
+    .service-card p {
+      color: var(--gris);
+    }
+
+    .service-card h3 {
+      margin-top: 1.3rem;
+      font-size: 1rem;
+    }
+
+    .service-card ul {
+      padding-left: 1.2rem;
+      color: var(--gris);
+    }
+
+    .service-card li {
+      margin-bottom: .35rem;
+    }
+
+    .service-tag {
+      display: inline-block;
+      margin-top: .8rem;
+      padding: .3rem .65rem;
+      border-radius: 20px;
+      background: #FCE8ED;
+      color: #9C2342;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    /* PROCESO */
+    .process-card {
+      height: 100%;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid #E6E8EB;
+      border-radius: 16px;
+      background: var(--blanco);
+    }
+
+    .process-number {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: var(--amarillo);
+      font-family: "Work Sans", sans-serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    .process-card h3 {
+      font-size: 1.15rem;
+    }
+
+    .process-card p {
+      margin-bottom: 0;
+      color: var(--gris);
+      font-size: .92rem;
+    }
+
+    /* LLAMADO A LA ACCIÓN */
+    .cta-section {
+      background: #FFF4D9;
+    }
+
+    .cta-panel {
+      padding: clamp(2rem, 5vw, 4rem);
+      border-radius: 24px;
+      background: var(--rosa);
+      color: var(--blanco);
+    }
+
+    .cta-panel h2 {
+      max-width: 750px;
+      margin: 0 auto 1rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .cta-panel p {
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .btn-light-good {
+      padding: .8rem 1.4rem;
+      border: 2px solid var(--blanco);
+      border-radius: 50px;
+      background: var(--blanco);
+      color: var(--negro);
+      font-weight: 800;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .btn-light-good:hover {
+      background: var(--amarillo);
+      border-color: var(--amarillo);
+      color: var(--negro);
+    }
+
+    /* PIE DE PÁGINA */
+    .site-footer {
+      padding: 3.5rem 0 1rem;
+      background: var(--negro);
+      color: var(--blanco);
+    }
+
+    .footer-brand {
+      display: inline-block;
+      margin-bottom: .7rem;
+      color: var(--blanco);
+      font-size: 1.7rem;
+      text-decoration: none;
+    }
+
+    .footer-muted {
+      color: #C5C5C5;
+    }
+
+    .footer-title {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .footer-links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: .5rem;
+      color: #D3D3D3;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-links a {
+      color: #D3D3D3;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--amarillo);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #424242;
+      color: #C5C5C5;
+      font-size: .82rem;
+    }
+
+    .back-to-top {
+      color: var(--amarillo);
+      text-decoration: none;
+    }
+
+    @media (max-width: 767.98px) {
+      .services-hero {
+        padding: 4rem 0;
+      }
+
+      .services-hero::after {
+        top: 2%;
+        right: -170px;
+        width: 300px;
+        height: 300px;
+        border-width: 20px;
+      }
+
+      .section-padding {
+        padding: 3.5rem 0;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- MENÚ PRINCIPAL -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
+      aria-label="Navegación principal">
+
+      <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logotipo.jpeg" alt="" width="150px">
+
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir o cerrar menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="servicios.html">Servicios</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="ubicacion.html">Ubicación</a>
+            </li>
+
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <a class="btn btn-good px-3" href="#cotizacion">
+                Solicitar cotización
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PORTADA DE SERVICIOS -->
+   <section class="services-hero">
+    <div class="container services-hero-content">
+
+        <!-- Texto del lado izquierdo -->
+        <div class="services-hero-text">
+            <p class="eyebrow">Nuestros servicios</p>
+
+            <h1>
+                Soluciones impresas<br>
+                para hacer <span>destacar tu marca</span>
+            </h1>
+
+            <p class="hero-copy">
+                En Good Print ofrecemos diferentes opciones de impresión
+                para empresas, tiendas, restaurantes, franquicias y negocios
+                que buscan comunicar sus ideas de manera visual.
+            </p>
+
+            <a href="#catalogo-servicios"
+               class="btn btn-good btn-lg mt-3">
+                Explorar servicios
+            </a>
+        </div>
+
+        <!-- Imagen del lado derecho -->
+        <div class="services-hero-image">
+            
+        </div>
+
+    </div>
+</section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="section-padding">
+      <div class="container content-narrow text-center">
+
+        <p class="eyebrow">Lo que podemos hacer por ti</p>
+
+        <h2 class="section-title">
+          Una solución para cada necesidad
+        </h2>
+
+        <p class="section-lead">
+          Desde materiales impresos para comunicar información hasta
+          gráficos de gran formato para dar visibilidad a tu negocio,
+          nuestros servicios están pensados para adaptarse a diferentes
+          objetivos comerciales.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DE SERVICIOS -->
+    <section id="catalogo-servicios" class="services-list section-padding">
+      <div class="container">
+
+        <div class="text-center content-narrow mb-5">
+          <p class="eyebrow">Catálogo</p>
+          <h2 class="section-title">Conoce nuestros servicios</h2>
+          <p class="section-lead">
+            Selecciona el servicio que te interesa para conocer sus
+            características y algunos de sus posibles usos.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+  <!-- SERVICIO 1: IMPRESIÓN OFFSET -->
+  <div class="col-md-6 col-lg-4" id="offset">
+    <article class="service-card">
+
+      <div class="service-image">
+        <img src="img/folletos 5.jpeg" width="350px" 
+             alt="Ejemplo de impresión offset"
+             loading="lazy">
+      </div>
+
+      <div class="service-number symbol-blue">01</div>
+
+      <h2>Impresión offset</h2>
+
+      <p>
+        Una alternativa para reproducir diseños sobre papel
+        cuando el proyecto requiere producir múltiples ejemplares.
+      </p>
+
+      <h3>Aplicaciones posibles</h3>
+      <ul>
+        <li>Folletos y volantes.</li>
+        <li>Catálogos y revistas.</li>
+        <li>Material corporativo.</li>
+        <li>Material publicitario impreso.</li>
+      </ul>
+
+      <span class="service-tag">Impresión en papel</span>
+    </article>
+  </div>
+
+  <!-- SERVICIO 2: IMPRESIÓN DIGITAL -->
+  <div class="col-md-6 col-lg-4" id="digital">
+    <article class="service-card">
+
+      <div class="service-image">
+        <img src="img/digital.jpeg" width="350px"
+             alt="Ejemplo de impresión digital"
+             loading="lazy">
+      </div>
+
+      <div class="service-number symbol-pink">02</div>
+
+      <h2>Impresión digital</h2>
+
+      <p>
+        Impresión a partir de archivos digitales, útil para proyectos
+        personalizados y trabajos que necesitan flexibilidad en sus cantidades.
+      </p>
+
+      <h3>Aplicaciones posibles</h3>
+      <ul>
+        <li>Flyers y tarjetas.</li>
+        <li>Material promocional.</li>
+        <li>Documentos y piezas gráficas.</li>
+        <li>Impresiones personalizadas.</li>
+      </ul>
+
+      <span class="service-tag">Personalización</span>
+    </article>
+  </div>
+
+  <!-- SERVICIO 3: LONAS Y VINILES -->
+  <div class="col-md-6 col-lg-4" id="gran-formato">
+    <article class="service-card">
+
+      <div class="service-image">
+        <img src="img/lonas.jpeg" width="350px"
+             alt="Ejemplo de lonas y viniles impresos"
+             loading="lazy">
+      </div>
+
+      <div class="service-number symbol-yellow">03</div>
+
+      <h2>Lonas y viniles</h2>
+
+      <p>
+        Gráficos de gran formato para mostrar mensajes, promociones
+        comerciales e identidad de marca en distintos espacios.
+      </p>
+
+      <h3>Aplicaciones posibles</h3>
+      <ul>
+        <li>Lonas publicitarias.</li>
+        <li>Viniles para escaparates.</li>
+        <li>Gráficos para fachadas.</li>
+        <li>Publicidad para puntos de venta.</li>
+      </ul>
+
+      <span class="service-tag">Gran formato</span>
+    </article>
+  </div>
+
+  <!-- SERVICIO 4: PROMOCIONALES -->
+  <div class="col-md-6 col-lg-4" id="promocionales">
+    <article class="service-card">
+
+      <div class="service-image">
+        <img src="img/promocionales.jpeg" width="350px"
+             alt="Ejemplos de artículos promocionales impresos"
+             loading="lazy">
+      </div>
+
+      <div class="service-number symbol-yellow">04</div>
+
+      <h2>Promocionales impresos</h2>
+
+      <p>
+        Artículos personalizados con diseños, nombres o mensajes
+        de marca para apoyar actividades promocionales.
+      </p>
+
+      <h3>Aplicaciones posibles</h3>
+      <ul>
+        <li>Artículos promocionales personalizados.</li>
+        <li>Material para campañas publicitarias.</li>
+        <li>Productos con identidad de marca.</li>
+      </ul>
+
+      <span class="service-tag">Publicidad de marca</span>
+    </article>
+  </div>
+
+  <!-- SERVICIO 5: STANDS -->
+  <div class="col-md-6 col-lg-4" id="stands">
+    <article class="service-card">
+
+      <div class="service-image">
+        <img src="img/stands 3.jpeg" width="350px"
+             alt="Ejemplo de stands impresos"
+             loading="lazy">
+      </div>
+
+      <div class="service-number symbol-blue">05</div>
+
+      <h2>Stands impresos</h2>
+
+      <p>
+        Elementos gráficos para presentar una marca en eventos,
+        exposiciones, ferias y espacios comerciales.
+      </p>
+
+      <h3>Aplicaciones posibles</h3>
+      <ul>
+        <li>Gráficos para exhibiciones.</li>
+        <li>Fondos visuales para eventos.</li>
+        <li>Elementos gráficos para puntos de venta.</li>
+      </ul>
+
+      <span class="service-tag">Exhibición comercial</span>
+    </article>
+  </div>
+
+</div>
+    </section>
+
+    <!-- PROCESO DE TRABAJO -->
+    <section class="section-padding">
+      <div class="container">
+
+        <div class="content-narrow text-center mb-5">
+          <p class="eyebrow">¿Cómo empezar?</p>
+          <h2 class="section-title">Tu proyecto en cuatro pasos</h2>
+          <p class="section-lead">
+            Estos son los pasos sugeridos para organizar una solicitud
+            de impresión.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="process-card">
+              <div class="process-number">1</div>
+              <h3>Cuéntanos tu idea</h3>
+              <p>Describe qué necesitas imprimir y cuál es el objetivo de tu proyecto.</p>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="process-card">
+              <div class="process-number">2</div>
+              <h3>Define los detalles</h3>
+              <p>Indica medidas, cantidades, materiales y características requeridas.</p>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="process-card">
+              <div class="process-number">3</div>
+              <h3>Solicita cotización</h3>
+              <p>Comparte los datos necesarios para consultar las opciones de tu proyecto.</p>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-3">
+            <article class="process-card">
+              <div class="process-number">4</div>
+              <h3>Prepara tu proyecto</h3>
+              <p>Revisa las especificaciones acordadas antes de confirmar tu impresión.</p>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LLAMADO A LA ACCIÓN -->
+    <section id="cotizacion" class="cta-section section-padding">
+      <div class="container">
+
+        <div class="cta-panel text-center">
+          <p class="eyebrow text-white">Hagamos visible tu idea</p>
+
+          <h2>
+            ¿Listo para darle vida a tu próximo proyecto?
+          </h2>
+
+          <p>
+            Cuéntanos qué necesitas imprimir y prepara los detalles
+            de tu proyecto para solicitar una cotización.
+          </p>
+
+          <a href="index.html#contacto" class="btn-light-good">
+            Solicitar cotización
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-lg-5">
+          <a class="footer-brand" href="index.html">
+           <img src="img/WhatsApp Image 2026-10-23 at 9.59.49 AM.jpeg" width="250px" alt=""></a> 
+
+          <p class="footer-muted">
+            Soluciones impresas personalizadas para empresas y comercios.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h2 class="footer-title">Navegación</h2>
+
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="ubicacion.html">Ubicación</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h2 class="footer-title">Contacto</h2>
+
+          <ul class="footer-links">
+            <li>
+              <a href="mailto:goodprintv@gmail.com">
+                goodprintv@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+525518341798">55 1834 1798</a>
+            </li>
+            <li>Cuautitlán Izcalli, Estado de México</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © <span id="anioActual"></span> Good Print. Todos los derechos reservados.
+        </span>
+
+        <a href="#top" class="back-to-top">Volver arriba ↑</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Mostrar el año actual automáticamente.
+    const anioActual = document.getElementById("anioActual");
+
+    if (anioActual) {
+      anioActual.textContent = new Date().getFullYear();
+    }
+  </script>
+
+</body>
+</html>
